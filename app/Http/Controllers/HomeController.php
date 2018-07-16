@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests;
 use Illuminate\Http\Request;
-use App\Services\WidgetsService;
+use App\Services\WidgetsGraphsService;
 
 class HomeController extends Controller
 {
@@ -23,7 +23,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(WidgetsService $widgetsService)
+    public function index(WidgetsGraphsService $widgetsService)
     {
         $expenses = \App\Expense::latest()->limit(10)->get(); 
         $incomes = \App\Income::latest()->limit(10)->get();

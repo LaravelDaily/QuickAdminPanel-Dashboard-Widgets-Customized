@@ -7,7 +7,7 @@
                     {{ $graphData['reportTitle'] }}
                 </div>
 
-                <canvas id="{{ $title }}Graph"></canvas>
+                <canvas id="{{ $title }}Graph" style="padding-left: 10px;"></canvas>
             </div>
         </div>
 

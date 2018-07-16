@@ -7,7 +7,7 @@ use App\Income;
 use App\Expense;
 
 
-class WidgetsCalculationService
+class WidgetsGraphsCalculationService
 {
     private $incomeByMonth = [];
     private $expensesByMonth = [];

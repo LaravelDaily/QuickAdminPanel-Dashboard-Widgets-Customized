@@ -2,11 +2,11 @@
 
 namespace App\Services;
 
-class WidgetsService
+class WidgetsGraphsService
 {
     protected $calculationService;
 
-    public function __construct(WidgetsCalculationService $calculationService)
+    public function __construct(WidgetsGraphsCalculationService $calculationService)
     {
         $this->calculationService = $calculationService;   
     }
