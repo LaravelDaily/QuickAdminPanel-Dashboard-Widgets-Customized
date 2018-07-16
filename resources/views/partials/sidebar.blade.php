@@ -95,29 +95,6 @@
                     
                 </ul>
             </li>@endcan
-            
-
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-line-chart"></i>
-                    <span class="title">Generated Reports</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                   <li class="{{ $request->is('/reports/expenses') }}">
-                        <a href="{{ url('/admin/reports/expenses') }}">
-                            <i class="fa fa-line-chart"></i>
-                            <span class="title">Expenses</span>
-                        </a>
-                    </li>
-                </ul>
-            </li>
-
-            
-
-
 
             <li class="{{ $request->segment(1) == 'change_password' ? 'active' : '' }}">
                 <a href="{{ route('auth.change_password') }}">
