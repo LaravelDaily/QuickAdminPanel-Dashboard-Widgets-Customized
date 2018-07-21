@@ -6,8 +6,7 @@ use Carbon\Carbon;
 use App\Income;
 use App\Expense;
 
-
-class WidgetsGraphsCalculationService
+class WidgetsCalculationService
 {
     private $incomeByMonth = [];
     private $expensesByMonth = [];
@@ -20,10 +19,15 @@ class WidgetsGraphsCalculationService
         $this->expensesByMonth = $this->modelByMonth(Expense::class);
     }
 
+    public function getFormat()
+    {
+        return $this->format;
+    }
+
     public function totalProfitPerMonth()
     {
-        $expensesPerMonth = $this->totalPerMonth($this->expensesByMonth);
-        $incomePerMonth = $this->totalPerMonth($this->incomeByMonth);
+        $expensesPerMonth = $this->totalExpensesPerMonth();
+        $incomePerMonth = $this->totalIncomePerMonth();
 
         foreach ($incomePerMonth as $month => $income) {
             $profitPerMonth[$month] = $income - $expensesPerMonth[$month];
@@ -35,6 +39,11 @@ class WidgetsGraphsCalculationService
     public function totalExpensesPerMonth()
     {
         return $this->totalPerMonth($this->expensesByMonth);
+    }
+
+    public function totalIncomePerMonth()
+    {
+        return $this->totalPerMonth($this->incomeByMonth);
     }
 
     private function totalPerMonth($months, $field = 'amount')

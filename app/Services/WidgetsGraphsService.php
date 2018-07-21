@@ -6,7 +6,7 @@ class WidgetsGraphsService
 {
     protected $calculationService;
 
-    public function __construct(WidgetsGraphsCalculationService $calculationService)
+    public function __construct(WidgetsCalculationService $calculationService)
     {
         $this->calculationService = $calculationService;   
     }

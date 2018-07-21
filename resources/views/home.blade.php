@@ -10,7 +10,6 @@
                 <table class="table table-bordered table-striped ajaxTable">
                     <thead>
                     <tr>
-                        
                         <th> @lang('quickadmin.expense.fields.entry-date')</th> 
                         <th> @lang('quickadmin.expense.fields.amount')</th> 
                         <th>&nbsp;</th>
@@ -54,7 +53,6 @@
                 <table class="table table-bordered table-striped ajaxTable">
                     <thead>
                         <tr>
-                            
                             <th> @lang('quickadmin.income.fields.entry-date')</th> 
                             <th> @lang('quickadmin.income.fields.amount')</th> 
                             <th>&nbsp;</th>
@@ -92,6 +90,7 @@
 </div>
 
 @include('partials.graphs')
+@include('partials.widgets')
 
 @endsection
 

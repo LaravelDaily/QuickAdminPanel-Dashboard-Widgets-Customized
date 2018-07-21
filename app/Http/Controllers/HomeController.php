@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Expense;
 use App\Http\Requests;
-use Illuminate\Http\Request;
+use App\Income;
+use App\Services\WidgetsInfoService;
 use App\Services\WidgetsGraphsService;
 
 class HomeController extends Controller
@@ -21,14 +23,17 @@ class HomeController extends Controller
     /**
      * Show the application dashboard.
      *
+     * @param WidgetsGraphsService $widgetsGraphsService
+     * @param WidgetsInfoService $widgetsInfoService
      * @return \Illuminate\Http\Response
      */
-    public function index(WidgetsGraphsService $widgetsService)
+    public function index(WidgetsGraphsService $widgetsGraphsService, WidgetsInfoService $widgetsInfoService)
     {
-        $expenses = \App\Expense::latest()->limit(10)->get(); 
-        $incomes = \App\Income::latest()->limit(10)->get();
-        $graphs = $widgetsService->getGraphs();
+        $expenses = Expense::latest()->limit(10)->get();
+        $incomes = Income::latest()->limit(10)->get();
+        $graphs = $widgetsGraphsService->getGraphs();
+        $infoData = $widgetsInfoService->getData();
 
-        return view('home', compact('expenses', 'incomes', 'graphs'));
+        return view('home', compact('expenses', 'incomes', 'graphs', 'infoData'));
     }
 }
