@@ -59,12 +59,13 @@ class WidgetsCalculationService
     private function modelByMonth($className)
     {
         $groupedModels = $this->groupByMonth($className);
+        $result = [];
 
         foreach ($this->generateMonthsArray() as $month) {
             $result[$month] = $groupedModels[$month] ?? [];
         }
 
-        return $result;
+        return collect($result);
     }
 
     private function groupByMonth($className)
