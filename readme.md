@@ -2,7 +2,7 @@
 
 This is a quick project to demonstrate our [QuickAdminPanel generator](https://quickadminpanel.com), specifically a mix of modules [Dashboard Widgets](http://docs.quickadminpanel.com/Installing_Modules/Custom_Modules/Dashboard_Widgets.html) and [Reports Generator](http://docs.quickadminpanel.com/Installing_Modules/Custom_Modules/Reports_Generator.html).
 
-![Laravel dashboard widgets adminpanel](http://webcoderpro.com/dashboard-widgets-demo.png)
+![Laravel dashboard widgets adminpanel](https://laraveldaily.com/wp-content/uploads/2018/11/dashboard-widgets-demo.png)
 
 ---
 
